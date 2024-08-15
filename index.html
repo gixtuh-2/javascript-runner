@@ -1,19 +1,19 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+        function start() {
+            if (run("code") === null) {
+                document.body.innerHTML = "You forgot to put a \"?code=code\" after the website"
+            } else {
+                document.body.innerHTML = "the code should now run"
+                eval(run("code"))
+                document.body.innerHTML = document.body.innerHTML + "<hr/>the code ran"
+            }
+        }
         function run(param) {
             const url = new URL(window.location.href)
             return url.searchParams.get(param)
         }
         if (run("manual") === "1") {
-            function start() {
-                if (run("code") === null) {
-                    document.body.innerHTML = "You forgot to put a \"?code=code\" after the website"
-                } else {
-                    document.body.innerHTML = "the code should now run"
-                    eval(run("code"))
-                    document.body.innerHTML = document.body.innerHTML + "<hr/>the code ran"
-                }
-            }
             document.body.innerHTML = "<button onclick='start()'>click me</button>"
         } else {
             if (run("code") === null) {
