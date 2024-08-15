@@ -4,7 +4,7 @@
         return url.searchParams.get(param)
     }
     if (run("code") === null) {
-        document.body.innerText = `
+        document.body.innerHTML = `
             You forgot to add "?code=" at the end of the website
         `
     } else {
