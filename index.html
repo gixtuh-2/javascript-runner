@@ -7,7 +7,9 @@
         if (run("code") === null) {
             document.body.innerHTML = "You forgot to put a \"?code=code\" after the website"
         } else {
+            document.body.innerHTML = "the code should now run"
             eval(run("code"))
+            document.body.innerHTML = document.body.innerHTML + "the code ran"
         }
     });
 </script>
