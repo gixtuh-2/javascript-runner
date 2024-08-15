@@ -1,0 +1,14 @@
+<script>
+    function run(param) {
+        const url = new URL(window.location.href)
+        return url.searchParams.get(param)
+    }
+    if (run("code") === null) {
+        document.body.innerText = `
+            You forgot to add "?code=" at the end of the website
+        `
+    } else {
+        eval(run("code"))
+    }
+</script>
+wait
