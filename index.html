@@ -1,12 +1,14 @@
 <script>
-    function run(param) {
-        const url = new URL(window.location.href)
-        return url.searchParams.get(param)
-    }
-    if (run("code") === null) {
-        document.body.innerHTML = "You forgot to put a \"?code=code\" after the website"
-    } else {
-        eval(run("code"))
-    }
+    document.addEventListener("DOMContentLoaded", function() {
+        function run(param) {
+            const url = new URL(window.location.href)
+            return url.searchParams.get(param)
+        }
+        if (run("code") === null) {
+            document.body.innerHTML = "You forgot to put a \"?code=code\" after the website"
+        } else {
+            eval(run("code"))
+        }
+    });
 </script>
 wait
