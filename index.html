@@ -4,7 +4,7 @@
             const url = new URL(window.location.href)
             return url.searchParams.get(param)
         }
-        if (run("manual") === 1) {
+        if (run("manual") === "1") {
             function start() {
                 if (run("code") === null) {
                     document.body.innerHTML = "You forgot to put a \"?code=code\" after the website"
